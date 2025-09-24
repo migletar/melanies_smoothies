@@ -18,7 +18,7 @@ cnx = st.connection("snowflake")
 session = cnx.session()
 
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
-#st.dataframe(data=my_dataframe, use_container_width=True)
+#st.dataframe(data=my_dataframe, width='stretch)
 #st.stop()
 
 # convert the snowpark datagrame to pandas dataframe so we can use the LOC function
@@ -43,7 +43,7 @@ if ingredients_list:
       
               st.subheader(fruit_chosen + 'Nutrition Information')
               smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + search_on)
-              pd_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+              pd_df = st.dataframe(data=smoothiefroot_response.json(), width='stretch)
 
     #st.write(ingredients_string)
 
